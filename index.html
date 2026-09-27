@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IG Reels 影音成效計算機 - 業配與自然流量分析</title>
+  <meta name="description" content="專業的 Instagram Reels 影音數據計算工具，快速計算業配影音與自然流量影音的平均按讚與觀看數據，並提供完整的成效分析報告。">
+  <!-- Google Fonts: Outfit & Noto Sans TC -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="background-glow bg-glow-1"></div>
+  <div class="background-glow bg-glow-2"></div>
+
+  <div class="container">
+    <header class="app-header">
+      <div class="logo-area">
+        <div class="instagram-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="20" height="20" rx="6" stroke="url(#ig-grad)" stroke-width="2"/>
+            <circle cx="12" cy="12" r="5" stroke="url(#ig-grad)" stroke-width="2"/>
+            <circle cx="18" cy="6" r="1.5" fill="url(#ig-grad)"/>
+            <path d="M9 10L14 12L9 14V10Z" fill="url(#ig-grad)"/>
+            <defs>
+              <linearGradient id="ig-grad" x1="2" y1="2" x2="22" y2="22" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#F97316"/>
+                <stop offset="50%" stop-color="#EC4899"/>
+                <stop offset="100%" stop-color="#8B5CF6"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <h1>IG Reels 成效計算機</h1>
+      </div>
+      <p class="subtitle">依公式計算：(3則業配影音 + 2則自然流量影音) 除以 5 的平均觀看與按讚數</p>
+    </header>
+
+    <main class="calculator-layout">
+      <!-- Left Column: Inputs -->
+      <section class="input-section">
+        <!-- Sponsored Reels Inputs -->
+        <div class="glass-card section-card">
+          <div class="card-header">
+            <span class="badge badge-sponsored">業配合作</span>
+            <h2>業配影音 <span class="subtext">(共 3 則)</span></h2>
+          </div>
+          
+          <div class="input-grid">
+            <!-- Sponsored Reel 1 -->
+            <div class="input-group-wrapper" data-reel="sponsored-1">
+              <div class="reel-label">影音 1</div>
+              <div class="inputs-row">
+                <div class="input-field-group">
+                  <label for="sp-views-1">觀看數</label>
+                  <input type="number" id="sp-views-1" class="calc-input" placeholder="0" min="0">
+                </div>
+                <div class="input-field-group">
+                  <label for="sp-likes-1">按讚數</label>
+                  <input type="number" id="sp-likes-1" class="calc-input" placeholder="0" min="0">
+                </div>
+              </div>
+            </div>
+
+            <!-- Sponsored Reel 2 -->
+            <div class="input-group-wrapper" data-reel="sponsored-2">
+              <div class="reel-label">影音 2</div>
+              <div class="inputs-row">
+                <div class="input-field-group">
+                  <label for="sp-views-2">觀看數</label>
+                  <input type="number" id="sp-views-2" class="calc-input" placeholder="0" min="0">
+                </div>
+                <div class="input-field-group">
+                  <label for="sp-likes-2">按讚數</label>
+                  <input type="number" id="sp-likes-2" class="calc-input" placeholder="0" min="0">
+                </div>
+              </div>
+            </div>
+
+            <!-- Sponsored Reel 3 -->
+            <div class="input-group-wrapper" data-reel="sponsored-3">
+              <div class="reel-label">影音 3</div>
+              <div class="inputs-row">
+                <div class="input-field-group">
+                  <label for="sp-views-3">觀看數</label>
+                  <input type="number" id="sp-views-3" class="calc-input" placeholder="0" min="0">
+                </div>
+                <div class="input-field-group">
+                  <label for="sp-likes-3">按讚數</label>
+                  <input type="number" id="sp-likes-3" class="calc-input" placeholder="0" min="0">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Organic Reels Inputs -->
+        <div class="glass-card section-card">
+          <div class="card-header">
+            <span class="badge badge-organic">自然流量</span>
+            <h2>自然流量影音 <span class="subtext">(共 2 則)</span></h2>
+          </div>
+          
+          <div class="input-grid">
+            <!-- Organic Reel 1 -->
+            <div class="input-group-wrapper" data-reel="organic-1">
+              <div class="reel-label">影音 4</div>
+              <div class="inputs-row">
+                <div class="input-field-group">
+                  <label for="org-views-1">觀看數</label>
+                  <input type="number" id="org-views-1" class="calc-input" placeholder="0" min="0">
+                </div>
+                <div class="input-field-group">
+                  <label for="org-likes-1">按讚數</label>
+                  <input type="number" id="org-likes-1" class="calc-input" placeholder="0" min="0">
+                </div>
+              </div>
+            </div>
+
+            <!-- Organic Reel 2 -->
+            <div class="input-group-wrapper" data-reel="organic-2">
+              <div class="reel-label">影音 5</div>
+              <div class="inputs-row">
+                <div class="input-field-group">
+                  <label for="org-views-2">觀看數</label>
+                  <input type="number" id="org-views-2" class="calc-input" placeholder="0" min="0">
+                </div>
+                <div class="input-field-group">
+                  <label for="org-likes-2">按讚數</label>
+                  <input type="number" id="org-likes-2" class="calc-input" placeholder="0" min="0">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Utility Buttons -->
+        <div class="btn-group">
+          <button id="btn-demo" class="btn btn-secondary">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            載入範例數據
+          </button>
+          <button id="btn-import-modal" class="btn btn-primary-gradient">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            匯入 IG 數據
+          </button>
+          <button id="btn-reset" class="btn btn-outline">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><polyline points="3 3 3 8 8 8"/></svg>
+            清除欄位
+          </button>
+        </div>
+      </section>
+
+      <!-- Right Column: Results & Analytics -->
+      <section class="results-section">
+        <!-- Main Averages (The requested core outputs) -->
+        <div class="glass-card main-results-card">
+          <div class="primary-result-box">
+            <div class="result-item">
+              <span class="result-title">IG Reels 平均觀看數</span>
+              <div class="result-number-container">
+                <div class="copy-result"><span id="avg-views" class="result-number">0</span><button type="button" class="copy-value" data-copy-target="avg-views" data-copy-label="IG Reels 平均觀看數" aria-label="複製IG Reels 平均觀看數">複製</button></div>
+              </div>
+              <span class="result-formula">Avg. Views = (3則業配 + 2則自然) / 5</span>
+            </div>
+            
+            <div class="divider-y"></div>
+
+            <div class="result-item">
+              <span class="result-title">IG Reels 平均按讚數</span>
+              <div class="result-number-container">
+                <div class="copy-result"><span id="avg-likes" class="result-number">0</span><button type="button" class="copy-value" data-copy-target="avg-likes" data-copy-label="IG Reels 平均按讚數" aria-label="複製IG Reels 平均按讚數">複製</button></div>
+              </div>
+              <span class="result-formula">Avg. Likes = (3則業配 + 2則自然) / 5</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Detailed Comparison Analytics -->
+        <div class="glass-card analytics-card">
+          <h3>進階成效分析</h3>
+          
+          <div class="analytics-grid">
+            <!-- Sponsored Performance Card -->
+            <div class="mini-card-stat">
+              <div class="mini-card-header">
+                <span class="dot dot-sponsored"></span>
+                <span>業配影音表現 (3則)</span>
+              </div>
+              <div class="stat-row">
+                <span class="stat-label">總觀看數</span>
+                <div class="copy-result"><span id="total-sp-views" class="stat-value">0</span><button type="button" class="copy-value" data-copy-target="total-sp-views" data-copy-label="業配總觀看數" aria-label="複製業配總觀看數">複製</button></div>
+              </div>
+              <div class="stat-row">
+                <span class="stat-label">總按讚數</span>
+                <div class="copy-result"><span id="total-sp-likes" class="stat-value">0</span><button type="button" class="copy-value" data-copy-target="total-sp-likes" data-copy-label="業配總按讚數" aria-label="複製業配總按讚數">複製</button></div>
+              </div>
+              <div class="stat-row highlight">
+                <span class="stat-label">平均觀看</span>
+                <div class="copy-result"><span id="avg-sp-views" class="stat-value">0</span><button type="button" class="copy-value" data-copy-target="avg-sp-views" data-copy-label="業配平均觀看數" aria-label="複製業配平均觀看數">複製</button></div>
+              </div>
+              <div class="stat-row highlight">
+                <span class="stat-label">平均按讚</span>
+                <div class="copy-result"><span id="avg-sp-likes" class="stat-value">0</span><button type="button" class="copy-value" data-copy-target="avg-sp-likes" data-copy-label="業配平均按讚數" aria-label="複製業配平均按讚數">複製</button></div>
+              </div>
+              <div class="stat-row engagement">
+                <span class="stat-label">平均互動率 (讚/看)</span>
+                <div class="copy-result"><span id="ratio-sp" class="stat-value">0.00%</span><button type="button" class="copy-value" data-copy-target="ratio-sp" data-copy-label="業配平均互動率" aria-label="複製業配平均互動率">複製</button></div>
+              </div>
+            </div>
+
+            <!-- Organic Performance Card -->
+            <div class="mini-card-stat">
+              <div class="mini-card-header">
+                <span class="dot dot-organic"></span>
+                <span>自然流量表現 (2則)</span>
+              </div>
+              <div class="stat-row">
+                <span class="stat-label">總觀看數</span>
+                <div class="copy-result"><span id="total-org-views" class="stat-value">0</span><button type="button" class="copy-value" data-copy-target="total-org-views" data-copy-label="自然流量總觀看數" aria-label="複製自然流量總觀看數">複製</button></div>
+              </div>
+              <div class="stat-row">
+                <span class="stat-label">總按讚數</span>
+                <div class="copy-result"><span id="total-org-likes" class="stat-value">0</span><button type="button" class="copy-value" data-copy-target="total-org-likes" data-copy-label="自然流量總按讚數" aria-label="複製自然流量總按讚數">複製</button></div>
+              </div>
+              <div class="stat-row highlight">
+                <span class="stat-label">平均觀看</span>
+                <div class="copy-result"><span id="avg-org-views" class="stat-value">0</span><button type="button" class="copy-value" data-copy-target="avg-org-views" data-copy-label="自然流量平均觀看數" aria-label="複製自然流量平均觀看數">複製</button></div>
+              </div>
+              <div class="stat-row highlight">
+                <span class="stat-label">平均按讚</span>
+                <div class="copy-result"><span id="avg-org-likes" class="stat-value">0</span><button type="button" class="copy-value" data-copy-target="avg-org-likes" data-copy-label="自然流量平均按讚數" aria-label="複製自然流量平均按讚數">複製</button></div>
+              </div>
+              <div class="stat-row engagement">
+                <span class="stat-label">平均互動率 (讚/看)</span>
+                <div class="copy-result"><span id="ratio-org" class="stat-value">0.00%</span><button type="button" class="copy-value" data-copy-target="ratio-org" data-copy-label="自然流量平均互動率" aria-label="複製自然流量平均互動率">複製</button></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Comparison Visual Charts (CSS bars) -->
+          <div class="comparison-charts">
+            <h4>數據佔比比較 (業配 vs 自然流量)</h4>
+            
+            <div class="chart-item">
+              <div class="chart-labels">
+                <span>總觀看數比例</span>
+                <div class="copy-result"><span id="views-ratio-text">50% vs 50%</span><button type="button" class="copy-value" data-copy-target="views-ratio-text" data-copy-label="總觀看數比例" aria-label="複製總觀看數比例">複製</button></div>
+              </div>
+              <div class="progress-bar-container">
+                <div id="bar-views-sp" class="progress-bar bar-sp" style="width: 50%"></div>
+                <div id="bar-views-org" class="progress-bar bar-org" style="width: 50%"></div>
+              </div>
+            </div>
+
+            <div class="chart-item">
+              <div class="chart-labels">
+                <span>總按讚數比例</span>
+                <div class="copy-result"><span id="likes-ratio-text">50% vs 50%</span><button type="button" class="copy-value" data-copy-target="likes-ratio-text" data-copy-label="總按讚數比例" aria-label="複製總按讚數比例">複製</button></div>
+              </div>
+              <div class="progress-bar-container">
+                <div id="bar-likes-sp" class="progress-bar bar-sp" style="width: 50%"></div>
+                <div id="bar-likes-org" class="progress-bar bar-org" style="width: 50%"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="export-area"><div id="toast" class="toast hidden" role="status" aria-live="polite"></div></div>
+        </div>
+      </section>
+    </main>
+
+    <section id="general-calculator" class="glass-card general-calculator" tabindex="0" aria-labelledby="general-title" aria-describedby="general-help">
+      <div class="card-header"><span class="badge badge-organic">日常運算</span><h2 id="general-title">一般計算機</h2></div>
+      <div class="general-layout">
+        <p id="general-help" class="general-help">支援加、減、乘、除與小數，依按鍵順序連續計算。<br>點選此區後可用鍵盤輸入：Enter 或 = 計算、Backspace 退格、Esc 清除。</p>
+        <div class="general-panel">
+          <div class="general-screen"><div id="general-expression" class="general-expression">準備計算</div><div class="copy-result"><output id="general-display" class="general-display" aria-live="polite" aria-atomic="true">0</output><button type="button" class="copy-value" data-copy-target="general-display" data-copy-label="一般計算機結果" aria-label="複製一般計算機結果">複製</button></div></div>
+          <div class="general-keys">
+          <button type="button" class="general-key" data-key="clear" aria-label="全部清除">AC</button>
+          <button type="button" class="general-key" data-key="backspace" aria-label="刪除最後一位">⌫</button>
+          <button type="button" class="general-key" data-key="sign" aria-label="切換正負號">±</button>
+          <button type="button" class="general-key general-operator" data-key="/" aria-label="除">÷</button>
+          <button type="button" class="general-key" data-key="7" aria-label="7">7</button>
+          <button type="button" class="general-key" data-key="8" aria-label="8">8</button>
+          <button type="button" class="general-key" data-key="9" aria-label="9">9</button>
+          <button type="button" class="general-key general-operator" data-key="*" aria-label="乘">×</button>
+          <button type="button" class="general-key" data-key="4" aria-label="4">4</button>
+          <button type="button" class="general-key" data-key="5" aria-label="5">5</button>
+          <button type="button" class="general-key" data-key="6" aria-label="6">6</button>
+          <button type="button" class="general-key general-operator" data-key="-" aria-label="減">−</button>
+          <button type="button" class="general-key" data-key="1" aria-label="1">1</button>
+          <button type="button" class="general-key" data-key="2" aria-label="2">2</button>
+          <button type="button" class="general-key" data-key="3" aria-label="3">3</button>
+          <button type="button" class="general-key general-operator" data-key="+" aria-label="加">+</button>
+          <button type="button" class="general-key" data-key="0" aria-label="0">0</button>
+          <button type="button" class="general-key" data-key="." aria-label="小數點">.</button>
+          <button type="button" class="general-key general-equals" data-key="equals" aria-label="等於">=</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>© 2026 IG Reels Performance Calculator • 商業成效估算專用</p>
+    </footer>
+  </div>
+
+  <!-- Import Data Modal -->
+  <div id="import-modal" class="modal-overlay hidden">
+    <div class="glass-card modal-card">
+      <div class="modal-header">
+        <h2>匯入 Instagram 數據</h2>
+        <button id="btn-close-modal" class="btn-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-help-text">請貼上從 Chrome 擴充功能複製的 JSON 數據：</p>
+        <textarea id="import-textarea" class="import-textarea" placeholder='請在此貼上數據，例如：[{"views":12500,"likes":450,"url":"https://..."}, ...]'></textarea>
+        
+        <div id="import-preview-area" class="import-preview-area hidden">
+          <div class="preview-header-row">
+            <h3>擷取到的影片列表 <span class="subtext">(共 5 則，請選 3 則業配、2 則自然)</span></h3>
+            <button id="btn-auto-classify" class="btn btn-xs btn-outline">自動分配 (前3後2)</button>
+          </div>
+          <div id="import-reels-list" class="import-reels-list">
+            <!-- Dynamically populated by JS -->
+          </div>
+          <div class="selection-status-bar">
+            <span>已配置：業配 <strong id="selected-sp-count" class="count-badge count-sp">0</strong> / 3 則，自然 <strong id="selected-org-count" class="count-badge count-org">0</strong> / 2 則</span>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div class="modal-footer-btns">
+          <button id="btn-parse-data" class="btn btn-secondary">解析並預覽</button>
+          <button id="btn-confirm-import" class="btn btn-primary btn-block" disabled>確認匯入數據</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="app.js"></script>
+</body>
+</html>
